@@ -17,6 +17,8 @@
 #error TIMER_FREQ <= 1000 recommended
 #endif
 
+static struct list listaThreadsDormindo;
+
 /* Number of timer ticks since OS booted. */
 static int64_t ticks;
 
@@ -30,11 +32,17 @@ static void busy_wait (int64_t loops);
 static void real_time_sleep (int64_t num, int32_t denom);
 static void real_time_delay (int64_t num, int32_t denom);
 
+bool less(const struct list_elem *threadA, const struct list_elem *threadB, void *aux UNUSED){
+  struct thread *thread1 = list_entry(threadA,struct thread,elem);
+  struct thread *thread2 = list_entry(threadB,struct thread,elem);
+  return thread1->acordarNoTick < thread2->acordarNoTick;
+}
 /* Sets up the timer to interrupt TIMER_FREQ times per second,
    and registers the corresponding interrupt. */
 void
 timer_init (void) 
 {
+  list_init(&listaThreadsDormindo);
   pit_configure_channel (0, 2, TIMER_FREQ);
   intr_register_ext (0x20, timer_interrupt, "8254 Timer");
 }
@@ -89,11 +97,15 @@ timer_elapsed (int64_t then)
 void
 timer_sleep (int64_t ticks) 
 {
-  int64_t start = timer_ticks ();
-
   ASSERT (intr_get_level () == INTR_ON);
-  while (timer_elapsed (start) < ticks) 
-    thread_yield ();
+  enum intr_level nivel = intr_disable();
+  int64_t tickParaAcordar = timer_ticks() + ticks;
+
+  struct thread *threadAtual = thread_current();
+  threadAtual->acordarNoTick = tickParaAcordar;
+  list_insert_ordered(&listaThreadsDormindo,&threadAtual->elem,less,NULL); 
+  thread_block();
+  intr_set_level(nivel);
 }
 
 /* Sleeps for approximately MS milliseconds.  Interrupts must be
@@ -171,6 +183,17 @@ static void
 timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
+  while(!list_empty(&listaThreadsDormindo)){
+    struct list_elem *primeiro = list_front(&listaThreadsDormindo);
+    struct thread *primeiroConvertido = list_entry(primeiro,struct thread,elem);
+    
+    if(primeiroConvertido->acordarNoTick <= timer_ticks()){
+      list_pop_front(&listaThreadsDormindo);
+      thread_unblock(primeiroConvertido);
+    }else{
+      break;
+    }
+  }
   thread_tick ();
 }
 
