@@ -1,0 +1,1184 @@
+Script started on 2026-09-20 21:06:29-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="75" LINES="9"]
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make
+[?2004lcd build && make all
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+gcc -c ../../threads/thread.c -o threads/thread.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/thread.d
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/timer.d
+[01m[K../../devices/timer.c:35:6:[m[K [01;35m[Kwarning: [m[Kno previous prototype for ‘[01m[Kless[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-prototypes-Wmissing-prototypes]8;;[m[K]
+   35 | bool [01;35m[Kless[m[K(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      [01;35m[K^~~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Kless[m[K’:
+[01m[K../../devices/timer.c:35:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaux[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   35 | (struct list_elem *threadA, struct list_elem *threadB, [01;35m[Kvoid *aux[m[K){
+      |                                                        [01;35m[K~~~~~~^~~[m[K
+
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Ktimer_sleep[m[K’:
+[01m[K../../devices/timer.c:109:64:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of ‘[01m[Klist_insert_ordered[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+  109 | nsert_ordered(&listaThreadsDormindo,&threadAtual->elem,[01;35m[Kless[m[K,NULL);
+      |                                                        [01;35m[K^~~~[m[K
+      |                                                        [01;35m[K|[m[K
+      |                                                        [01;35m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K
+
+In file included from [01m[K../../threads/synch.h:4[m[K,
+                 from [01m[K../../devices/timer.c:8[m[K:
+[01m[K../../lib/kernel/list.h:173:27:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K_Bool (*)(const struct list_elem *, const struct list_elem *, void *)[m[K’ but argument is of type ‘[01m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K’
+  173 |                           [01;36m[Klist_less_func *[m[K, void *aux);
+      |                           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+gcc -c ../../devices/serial.c -o devices/serial.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/serial.d
+gcc -c ../../devices/intq.c -o devices/intq.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/intq.d
+gcc -c ../../devices/shutdown.c -o devices/shutdown.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/shutdown.d
+gcc -c ../../lib/kernel/debug.c -o lib/kernel/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/debug.d
+[01m[K../../lib/kernel/debug.c:[m[K In function ‘[01m[Kprint_stacktrace[m[K’:
+[01m[K../../lib/kernel/debug.c:82:15:[m[K [01;35m[Kwarning: [m[Kcalling ‘[01m[K__builtin_frame_address[m[K’ with a nonzero argument is unsafe [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wframe-address-Wframe-address]8;;[m[K]
+   82 |       frame = [01;35m[K__builtin_frame_address (1)[m[K;
+      |               [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-wait.c -o tests/threads/alarm-wait.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-wait.d
+[01m[K../../tests/threads/alarm-wait.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-wait.c:92:46:[m[K [01;35m[Kwarning: [m[K‘[01m[Ksnprintf[m[K’ output may be truncated before the last format character [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   92 |       snprintf (name, sizeof name, "thread %d[01;35m[K"[m[K, i);
+      |                                              [01;35m[K^[m[K
+[01m[K../../tests/threads/alarm-wait.c:92:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 17 bytes into a destination of size 16
+   92 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-simultaneous.c -o tests/threads/alarm-simultaneous.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-simultaneous.d
+[01m[K../../tests/threads/alarm-simultaneous.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-simultaneous.c:61:44:[m[K [01;35m[Kwarning: [m[K‘[01m[K%d[m[K’ directive output may be truncated writing between 1 and 10 bytes into a region of size 9 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   61 |       snprintf (name, sizeof name, "thread [01;35m[K%d[m[K", i);
+      |                                            [01;35m[K^~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:36:[m[K [01;36m[Knote: [m[Kdirective argument in the range [0, 2147483646]
+   61 |       snprintf (name, sizeof name, [01;36m[K"thread %d"[m[K, i);
+      |                                    [01;36m[K^~~~~~~~~~~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 18 bytes into a destination of size 16
+   61 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-priority.c -o tests/threads/alarm-priority.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-priority.d
+gcc -c ../../tests/threads/alarm-zero.c -o tests/threads/alarm-zero.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-zero.d
+gcc -c ../../tests/threads/alarm-negative.c -o tests/threads/alarm-negative.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-negative.d
+gcc -c ../../tests/threads/priority-change.c -o tests/threads/priority-change.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-change.d
+gcc -c ../../tests/threads/priority-donate-one.c -o tests/threads/priority-donate-one.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-one.d
+gcc -c ../../tests/threads/priority-donate-multiple.c -o tests/threads/priority-donate-multiple.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple.d
+gcc -c ../../tests/threads/priority-donate-multiple2.c -o tests/threads/priority-donate-multiple2.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple2.d
+gcc -c ../../tests/threads/priority-donate-nest.c -o tests/threads/priority-donate-nest.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-nest.d
+gcc -c ../../tests/threads/priority-donate-sema.c -o tests/threads/priority-donate-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-sema.d
+gcc -c ../../tests/threads/priority-donate-lower.c -o tests/threads/priority-donate-lower.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-lower.d
+gcc -c ../../tests/threads/priority-fifo.c -o tests/threads/priority-fifo.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-fifo.d
+gcc -c ../../tests/threads/priority-preempt.c -o tests/threads/priority-preempt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-preempt.d
+gcc -c ../../tests/threads/priority-sema.c -o tests/threads/priority-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-sema.d
+gcc -c ../../tests/threads/priority-condvar.c -o tests/threads/priority-condvar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-condvar.d
+gcc -c ../../tests/threads/priority-donate-chain.c -o tests/threads/priority-donate-chain.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-chain.d
+gcc -c ../../tests/threads/mlfqs-load-1.c -o tests/threads/mlfqs-load-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-1.d
+gcc -c ../../tests/threads/mlfqs-load-60.c -o tests/threads/mlfqs-load-60.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-60.d
+gcc -c ../../tests/threads/mlfqs-load-avg.c -o tests/threads/mlfqs-load-avg.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-avg.d
+gcc -c ../../tests/threads/mlfqs-recent-1.c -o tests/threads/mlfqs-recent-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-recent-1.d
+gcc -c ../../tests/threads/mlfqs-fair.c -o tests/threads/mlfqs-fair.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-fair.d
+gcc -c ../../tests/threads/mlfqs-block.c -o tests/threads/mlfqs-block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-block.d
+ld -melf_i386 -T threads/kernel.lds.s -o kernel.o threads/start.o threads/init.o threads/thread.o threads/switch.o threads/interrupt.o threads/intr-stubs.o threads/synch.o threads/palloc.o threads/malloc.o devices/pit.o devices/timer.o devices/kbd.o devices/vga.o devices/serial.o devices/block.o devices/partition.o devices/ide.o devices/input.o devices/intq.o devices/rtc.o devices/shutdown.o devices/speaker.o lib/debug.o lib/random.o lib/stdio.o lib/stdlib.o lib/string.o lib/arithmetic.o lib/ustar.o lib/kernel/debug.o lib/kernel/list.o lib/kernel/bitmap.o lib/kernel/hash.o lib/kernel/console.o tests/threads/tests.o tests/threads/alarm-wait.o tests/threads/alarm-simultaneous.o tests/threads/alarm-priority.o tests/threads/alarm-zero.o tests/threads/alarm-negative.o tests/threads/priority-change.o tests/threads/priority-donate-one.o tests/threads/priority-donate-multiple.o tests/threads/priority-donate-multiple2.o tests/threads/priority-donate-nest.o tests/threads/priority-donate-sema.o tests/threads/priority-donate-lower.o tests/threads/priority-fifo.o tests/threads/priority-preempt.o tests/threads/priority-sema.o tests/threads/priority-condvar.o tests/threads/priority-donate-chain.o tests/threads/mlfqs-load-1.o tests/threads/mlfqs-load-60.o tests/threads/mlfqs-load-avg.o tests/threads/mlfqs-recent-1.o tests/threads/mlfqs-fair.o tests/threads/mlfqs-block.o
+ld: warning: tests/threads/tests.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+objdump -S kernel.o > kernel.asm
+nm -n kernel.o > kernel.sym
+objcopy -R .note -R .comment -S kernel.o kernel.bin
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make check
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+pintos -v -k -T 60 --qemu  -- -q  run alarm-single < /dev/null 2> tests/threads/alarm-single.errors > tests/threads/alarm-single.output
+make[1]: *** [../../tests/Make.tests:74: tests/threads/alarm-single.output] Error 127
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+make: *** [../Makefile.kernel:10: check] Error 2
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [7mwhich pintos[27mwhich pintos
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [7mexport PATH=$PATH:/home/gabri/[27m[7mp[27m[7mintos-env/pintos/src/utils[27m[A]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ export PATH=$PATH:/home/gabri/pintos-env/pintos/src/utils
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make check
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+perl -I../.. ../../tests/threads/alarm-single.ck tests/threads/alarm-single tests/threads/alarm-single.result
+[31mFAIL tests/threads/alarm-single
+[0mRun produced no output at all
+pintos -v -k -T 60 --qemu  -- -q  run alarm-multiple < /dev/null 2> tests/threads/alarm-multiple.errors > tests/threads/alarm-multiple.output
+^Cmake[1]: *** Deleting file 'tests/threads/alarm-multiple.output'
+make[1]: *** [../../tests/Make.tests:74: tests/threads/alarm-multiple.output] Interrupt
+make: *** [../Makefile.kernel:10: check] Interrupt
+
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ exit
+[?2004lexit
+
+Script done on 2026-09-20 21:09:39-03:00 [COMMAND_EXIT_CODE="130"]
+Script started on 2026-09-20 21:15:24-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="75" LINES="8"]
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make check
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/timer.d
+[01m[K../../devices/timer.c:35:6:[m[K [01;35m[Kwarning: [m[Kno previous prototype for ‘[01m[Kless[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-prototypes-Wmissing-prototypes]8;;[m[K]
+   35 | bool [01;35m[Kless[m[K(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      [01;35m[K^~~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Kless[m[K’:
+[01m[K../../devices/timer.c:35:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaux[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   35 | (struct list_elem *threadA, struct list_elem *threadB, [01;35m[Kvoid *aux[m[K){
+      |                                                        [01;35m[K~~~~~~^~~[m[K
+
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Ktimer_sleep[m[K’:
+[01m[K../../devices/timer.c:110:64:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of ‘[01m[Klist_insert_ordered[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+  110 | nsert_ordered(&listaThreadsDormindo,&threadAtual->elem,[01;35m[Kless[m[K,NULL);
+      |                                                        [01;35m[K^~~~[m[K
+      |                                                        [01;35m[K|[m[K
+      |                                                        [01;35m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K
+
+In file included from [01m[K../../threads/synch.h:4[m[K,
+                 from [01m[K../../devices/timer.c:8[m[K:
+[01m[K../../lib/kernel/list.h:173:27:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K_Bool (*)(const struct list_elem *, const struct list_elem *, void *)[m[K’ but argument is of type ‘[01m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K’
+  173 |                           [01;36m[Klist_less_func *[m[K, void *aux);
+      |                           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+ld -melf_i386 -T threads/kernel.lds.s -o kernel.o threads/start.o threads/init.o threads/thread.o threads/switch.o threads/interrupt.o threads/intr-stubs.o threads/synch.o threads/palloc.o threads/malloc.o devices/pit.o devices/timer.o devices/kbd.o devices/vga.o devices/serial.o devices/block.o devices/partition.o devices/ide.o devices/input.o devices/intq.o devices/rtc.o devices/shutdown.o devices/speaker.o lib/debug.o lib/random.o lib/stdio.o lib/stdlib.o lib/string.o lib/arithmetic.o lib/ustar.o lib/kernel/debug.o lib/kernel/list.o lib/kernel/bitmap.o lib/kernel/hash.o lib/kernel/console.o tests/threads/tests.o tests/threads/alarm-wait.o tests/threads/alarm-simultaneous.o tests/threads/alarm-priority.o tests/threads/alarm-zero.o tests/threads/alarm-negative.o tests/threads/priority-change.o tests/threads/priority-donate-one.o tests/threads/priority-donate-multiple.o tests/threads/priority-donate-multiple2.o tests/threads/priority-donate-nest.o tests/threads/priority-donate-sema.o tests/threads/priority-donate-lower.o tests/threads/priority-fifo.o tests/threads/priority-preempt.o tests/threads/priority-sema.o tests/threads/priority-condvar.o tests/threads/priority-donate-chain.o tests/threads/mlfqs-load-1.o tests/threads/mlfqs-load-60.o tests/threads/mlfqs-load-avg.o tests/threads/mlfqs-recent-1.o tests/threads/mlfqs-fair.o tests/threads/mlfqs-block.o
+ld: warning: tests/threads/tests.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+objdump -S kernel.o > kernel.asm
+nm -n kernel.o > kernel.sym
+objcopy -R .note -R .comment -S kernel.o kernel.bin
+pintos -v -k -T 60 --qemu  -- -q  run alarm-single < /dev/null 2> tests/threads/alarm-single.errors > tests/threads/alarm-single.output
+^Cmake[1]: *** Deleting file 'tests/threads/alarm-single.output'
+make[1]: *** [../../tests/Make.tests:74: tests/threads/alarm-single.output] Interrupt
+make: *** [../Makefile.kernel:10: check] Interrupt
+
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make chech[Kk
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+pintos -v -k -T 60 --qemu  -- -q  run alarm-single < /dev/null 2> tests/threads/alarm-single.errors > tests/threads/alarm-single.output
+perl -I../.. ../../tests/threads/alarm-single.ck tests/threads/alarm-single tests/threads/alarm-single.result
+[31mFAIL tests/threads/alarm-single
+[0mrun: TIMEOUT after 60 seconds of host CPU time
+pintos -v -k -T 60 --qemu  -- -q  run alarm-multiple < /dev/null 2> tests/threads/alarm-multiple.errors > tests/threads/alarm-multiple.output
+^Cmake[1]: *** Deleting file 'tests/threads/alarm-multiple.output'
+make[1]: *** [../../tests/Make.tests:74: tests/threads/alarm-multiple.output] Interrupt
+make: *** [../Makefile.kernel:10: check] Interrupt
+
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [K]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ a[Kmake
+[?2004lcd build && make all
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/timer.d
+[01m[K../../devices/timer.c:35:6:[m[K [01;35m[Kwarning: [m[Kno previous prototype for ‘[01m[Kless[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-prototypes-Wmissing-prototypes]8;;[m[K]
+   35 | bool [01;35m[Kless[m[K(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      [01;35m[K^~~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Kless[m[K’:
+[01m[K../../devices/timer.c:35:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaux[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   35 | em *threadA, struct list_elem *threadB, [01;35m[Kvoid *aux[m[K){
+      |                                         [01;35m[K~~~~~~^~~[m[K
+
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Ktimer_sleep[m[K’:
+[01m[K../../devices/timer.c:110:64:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of ‘[01m[Klist_insert_ordered[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+  110 | listaThreadsDormindo,&threadAtual->elem,[01;35m[Kless[m[K,NULL);
+      |                                         [01;35m[K^~~~[m[K
+      |                                         [01;35m[K|[m[K
+      |                                         [01;35m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K
+
+In file included from [01m[K../../threads/synch.h:4[m[K,
+                 from [01m[K../../devices/timer.c:8[m[K:
+[01m[K../../lib/kernel/list.h:173:27:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K_Bool (*)(const struct list_elem *, const struct list_elem *, void *)[m[K’ but argument is of type ‘[01m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K’
+  173 |                           [01;36m[Klist_less_func *[m[K, void *aux);
+      |                           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+ld -melf_i386 -T threads/kernel.lds.s -o kernel.o threads/start.o threads/init.o threads/thread.o threads/switch.o threads/interrupt.o threads/intr-stubs.o threads/synch.o threads/palloc.o threads/malloc.o devices/pit.o devices/timer.o devices/kbd.o devices/vga.o devices/serial.o devices/block.o devices/partition.o devices/ide.o devices/input.o devices/intq.o devices/rtc.o devices/shutdown.o devices/speaker.o lib/debug.o lib/random.o lib/stdio.o lib/stdlib.o lib/string.o lib/arithmetic.o lib/ustar.o lib/kernel/debug.o lib/kernel/list.o lib/kernel/bitmap.o lib/kernel/hash.o lib/kernel/console.o tests/threads/tests.o tests/threads/alarm-wait.o tests/threads/alarm-simultaneous.o tests/threads/alarm-priority.o tests/threads/alarm-zero.o tests/threads/alarm-negative.o tests/threads/priority-change.o tests/threads/priority-donate-one.o tests/threads/priority-donate-multiple.o tests/threads/priority-donate-multiple2.o tests/threads/priority-donate-nest.o tests/threads/priority-donate-sema.o tests/threads/priority-donate-lower.o tests/threads/priority-fifo.o tests/threads/priority-preempt.o tests/threads/priority-sema.o tests/threads/priority-condvar.o tests/threads/priority-donate-chain.o tests/threads/mlfqs-load-1.o tests/threads/mlfqs-load-60.o tests/threads/mlfqs-load-avg.o tests/threads/mlfqs-recent-1.o tests/threads/mlfqs-fair.o tests/threads/mlfqs-block.o
+ld: warning: tests/threads/tests.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+objdump -S kernel.o > kernel.asm
+nm -n kernel.o > kernel.sym
+objcopy -R .note -R .comment -S kernel.o kernel.bin
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make check
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+pintos -v -k -T 60 --qemu  -- -q  run alarm-single < /dev/null 2> tests/threads/alarm-single.errors > tests/threads/alarm-single.output
+perl -I../.. ../../tests/threads/alarm-single.ck tests/threads/alarm-single tests/threads/alarm-single.result
+[31mFAIL tests/threads/alarm-single
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run alarm-multiple < /dev/null 2> tests/threads/alarm-multiple.errors > tests/threads/alarm-multiple.output
+perl -I../.. ../../tests/threads/alarm-multiple.ck tests/threads/alarm-multiple tests/threads/alarm-multiple.result
+[31mFAIL tests/threads/alarm-multiple
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run alarm-simultaneous < /dev/null 2> tests/threads/alarm-simultaneous.errors > tests/threads/alarm-simultaneous.output
+perl -I../.. ../../tests/threads/alarm-simultaneous.ck tests/threads/alarm-simultaneous tests/threads/alarm-simultaneous.result
+[31mFAIL tests/threads/alarm-simultaneous
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run alarm-priority < /dev/null 2> tests/threads/alarm-priority.errors > tests/threads/alarm-priority.output
+perl -I../.. ../../tests/threads/alarm-priority.ck tests/threads/alarm-priority tests/threads/alarm-priority.result
+[31mFAIL tests/threads/alarm-priority
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run alarm-zero < /dev/null 2> tests/threads/alarm-zero.errors > tests/threads/alarm-zero.output
+perl -I../.. ../../tests/threads/alarm-zero.ck tests/threads/alarm-zero tests/threads/alarm-zero.result
+[31mFAIL tests/threads/alarm-zero
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run alarm-negative < /dev/null 2> tests/threads/alarm-negative.errors > tests/threads/alarm-negative.output
+perl -I../.. ../../tests/threads/alarm-negative.ck tests/threads/alarm-negative tests/threads/alarm-negative.result
+[31mFAIL tests/threads/alarm-negative
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-change < /dev/null 2> tests/threads/priority-change.errors > tests/threads/priority-change.output
+perl -I../.. ../../tests/threads/priority-change.ck tests/threads/priority-change tests/threads/priority-change.result
+[31mFAIL tests/threads/priority-change
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-one < /dev/null 2> tests/threads/priority-donate-one.errors > tests/threads/priority-donate-one.output
+perl -I../.. ../../tests/threads/priority-donate-one.ck tests/threads/priority-donate-one tests/threads/priority-donate-one.result
+[31mFAIL tests/threads/priority-donate-one
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-multiple < /dev/null 2> tests/threads/priority-donate-multiple.errors > tests/threads/priority-donate-multiple.output
+perl -I../.. ../../tests/threads/priority-donate-multiple.ck tests/threads/priority-donate-multiple tests/threads/priority-donate-multiple.result
+[31mFAIL tests/threads/priority-donate-multiple
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-multiple2 < /dev/null 2> tests/threads/priority-donate-multiple2.errors > tests/threads/priority-donate-multiple2.output
+perl -I../.. ../../tests/threads/priority-donate-multiple2.ck tests/threads/priority-donate-multiple2 tests/threads/priority-donate-multiple2.result
+[31mFAIL tests/threads/priority-donate-multiple2
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-nest < /dev/null 2> tests/threads/priority-donate-nest.errors > tests/threads/priority-donate-nest.output
+perl -I../.. ../../tests/threads/priority-donate-nest.ck tests/threads/priority-donate-nest tests/threads/priority-donate-nest.result
+[31mFAIL tests/threads/priority-donate-nest
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-sema < /dev/null 2> tests/threads/priority-donate-sema.errors > tests/threads/priority-donate-sema.output
+perl -I../.. ../../tests/threads/priority-donate-sema.ck tests/threads/priority-donate-sema tests/threads/priority-donate-sema.result
+[31mFAIL tests/threads/priority-donate-sema
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-lower < /dev/null 2> tests/threads/priority-donate-lower.errors > tests/threads/priority-donate-lower.output
+perl -I../.. ../../tests/threads/priority-donate-lower.ck tests/threads/priority-donate-lower tests/threads/priority-donate-lower.result
+[31mFAIL tests/threads/priority-donate-lower
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-fifo < /dev/null 2> tests/threads/priority-fifo.errors > tests/threads/priority-fifo.output
+perl -I../.. ../../tests/threads/priority-fifo.ck tests/threads/priority-fifo tests/threads/priority-fifo.result
+[31mFAIL tests/threads/priority-fifo
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-preempt < /dev/null 2> tests/threads/priority-preempt.errors > tests/threads/priority-preempt.output
+perl -I../.. ../../tests/threads/priority-preempt.ck tests/threads/priority-preempt tests/threads/priority-preempt.result
+[31mFAIL tests/threads/priority-preempt
+[0mKernel panic in run: PANIC at ../../threads/init.c:334 in run_actions(): unknown action `run' (use -h for help)
+Call stack: 0xc002a161 0xc002096e 0xc002045a
+Translation of call stack:
+0xc002a161: debug_panic (.../../lib/kernel/debug.c:38)
+0xc002096e: run_actions (.../../../threads/init.c:335)
+0xc002045a: pintos_init (.../../../threads/init.c:134)
+pintos -v -k -T 60 --qemu  -- -q  run priority-sema < /dev/null 2> tests/threads/priority-sema.errors > tests/threads/priority-sema.output
+^Cmake[1]: *** Deleting file 'tests/threads/priority-sema.output'
+make[1]: *** [../../tests/Make.tests:74: tests/threads/priority-sema.output] Interrupt
+make: *** [../Makefile.kernel:10: check] Interrupt
+
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ [7mmake clean[27m
+[7mmake[27m
+[7mmake check[27m[A[A]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make clean
+make
+make check
+[?2004lrm -rf build
+mkdir -p build/devices
+mkdir -p build/lib
+mkdir -p build/lib/kernel
+mkdir -p build/lib/user
+mkdir -p build/tests/threads
+mkdir -p build/threads
+cp ../Makefile.build build/Makefile
+cd build && make all
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+gcc -E -nostdinc -I../.. -I../../lib -I../../lib/kernel -P ../../threads/kernel.lds.S > threads/kernel.lds.s
+gcc -c ../../threads/start.S -o threads/start.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/start.d
+gcc -c ../../threads/init.c -o threads/init.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/init.d
+gcc -c ../../threads/thread.c -o threads/thread.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/thread.d
+gcc -c ../../threads/switch.S -o threads/switch.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/switch.d
+gcc -c ../../threads/interrupt.c -o threads/interrupt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/interrupt.d
+gcc -c ../../threads/intr-stubs.S -o threads/intr-stubs.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/intr-stubs.d
+gcc -c ../../threads/synch.c -o threads/synch.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/synch.d
+gcc -c ../../threads/palloc.c -o threads/palloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/palloc.d
+gcc -c ../../threads/malloc.c -o threads/malloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/malloc.d
+gcc -c ../../devices/pit.c -o devices/pit.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/pit.d
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/timer.d
+[01m[K../../devices/timer.c:35:6:[m[K [01;35m[Kwarning: [m[Kno previous prototype for ‘[01m[Kless[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-prototypes-Wmissing-prototypes]8;;[m[K]
+   35 | bool [01;35m[Kless[m[K(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      [01;35m[K^~~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Kless[m[K’:
+[01m[K../../devices/timer.c:35:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaux[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   35 | bool less(struct list_elem *threadA, struct list_elem *threadB, [01;35m[Kvoid *aux[m[K){
+      |                                                                 [01;35m[K~~~~~~^~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Ktimer_sleep[m[K’:
+[01m[K../../devices/timer.c:110:64:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of ‘[01m[Klist_insert_ordered[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+  110 |   list_insert_ordered(&listaThreadsDormindo,&threadAtual->elem,[01;35m[Kless[m[K,NULL);
+      |                                                                [01;35m[K^~~~[m[K
+      |                                                                [01;35m[K|[m[K
+      |                                                                [01;35m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K
+In file included from [01m[K../../threads/synch.h:4[m[K,
+                 from [01m[K../../devices/timer.c:8[m[K:
+[01m[K../../lib/kernel/list.h:173:27:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K_Bool (*)(const struct list_elem *, const struct list_elem *, void *)[m[K’ but argument is of type ‘[01m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K’
+  173 |                           [01;36m[Klist_less_func *[m[K, void *aux);
+      |                           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+gcc -c ../../devices/kbd.c -o devices/kbd.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/kbd.d
+gcc -c ../../devices/vga.c -o devices/vga.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/vga.d
+gcc -c ../../devices/serial.c -o devices/serial.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/serial.d
+gcc -c ../../devices/block.c -o devices/block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/block.d
+gcc -c ../../devices/partition.c -o devices/partition.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/partition.d
+gcc -c ../../devices/ide.c -o devices/ide.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/ide.d
+gcc -c ../../devices/input.c -o devices/input.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/input.d
+gcc -c ../../devices/intq.c -o devices/intq.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/intq.d
+gcc -c ../../devices/rtc.c -o devices/rtc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/rtc.d
+gcc -c ../../devices/shutdown.c -o devices/shutdown.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/shutdown.d
+gcc -c ../../devices/speaker.c -o devices/speaker.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/speaker.d
+gcc -c ../../lib/debug.c -o lib/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/debug.d
+[01m[K../../lib/debug.c:[m[K In function ‘[01m[Kdebug_backtrace[m[K’:
+[01m[K../../lib/debug.c:19:16:[m[K [01;35m[Kwarning: [m[Kcalling ‘[01m[K__builtin_frame_address[m[K’ with a nonzero argument is unsafe [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wframe-address-Wframe-address]8;;[m[K]
+   19 |   for (frame = [01;35m[K__builtin_frame_address (1)[m[K;
+      |                [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../lib/random.c -o lib/random.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/random.d
+gcc -c ../../lib/stdio.c -o lib/stdio.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/stdio.d
+gcc -c ../../lib/stdlib.c -o lib/stdlib.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/stdlib.d
+gcc -c ../../lib/string.c -o lib/string.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/string.d
+In file included from [01m[K../../lib/string.c:2[m[K:
+[01m[K../../lib/string.c:[m[K In function ‘[01m[Kstrchr[m[K’:
+[01m[K../../lib/debug.h:32:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Knonnull[m[K’ argument ‘[01m[Kstring[m[K’ compared to NULL [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnonnull-compare-Wnonnull-compare]8;;[m[K]
+   32 |         if [01;35m[K([m[KCONDITION) { } else {                               \
+      |            [01;35m[K^[m[K
+[01m[K../../lib/string.c:117:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KASSERT[m[K’
+  117 |   [01;36m[KASSERT[m[K (string != NULL);
+      |   [01;36m[K^~~~~~[m[K
+[01m[K../../lib/string.c:[m[K In function ‘[01m[Kstrlen[m[K’:
+[01m[K../../lib/debug.h:32:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Knonnull[m[K’ argument ‘[01m[Kstring[m[K’ compared to NULL [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnonnull-compare-Wnonnull-compare]8;;[m[K]
+   32 |         if [01;35m[K([m[KCONDITION) { } else {                               \
+      |            [01;35m[K^[m[K
+[01m[K../../lib/string.c:297:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KASSERT[m[K’
+  297 |   [01;36m[KASSERT[m[K (string != NULL);
+      |   [01;36m[K^~~~~~[m[K
+gcc -c ../../lib/arithmetic.c -o lib/arithmetic.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/arithmetic.d
+gcc -c ../../lib/ustar.c -o lib/ustar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/ustar.d
+gcc -c ../../lib/kernel/debug.c -o lib/kernel/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/debug.d
+[01m[K../../lib/kernel/debug.c:[m[K In function ‘[01m[Kprint_stacktrace[m[K’:
+[01m[K../../lib/kernel/debug.c:82:15:[m[K [01;35m[Kwarning: [m[Kcalling ‘[01m[K__builtin_frame_address[m[K’ with a nonzero argument is unsafe [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wframe-address-Wframe-address]8;;[m[K]
+   82 |       frame = [01;35m[K__builtin_frame_address (1)[m[K;
+      |               [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../lib/kernel/list.c -o lib/kernel/list.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/list.d
+gcc -c ../../lib/kernel/bitmap.c -o lib/kernel/bitmap.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/bitmap.d
+gcc -c ../../lib/kernel/hash.c -o lib/kernel/hash.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/hash.d
+gcc -c ../../lib/kernel/console.c -o lib/kernel/console.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/console.d
+gcc -c ../../tests/threads/tests.c -o tests/threads/tests.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/tests.d
+gcc -c ../../tests/threads/alarm-wait.c -o tests/threads/alarm-wait.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-wait.d
+[01m[K../../tests/threads/alarm-wait.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-wait.c:92:46:[m[K [01;35m[Kwarning: [m[K‘[01m[Ksnprintf[m[K’ output may be truncated before the last format character [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   92 |       snprintf (name, sizeof name, "thread %d[01;35m[K"[m[K, i);
+      |                                              [01;35m[K^[m[K
+[01m[K../../tests/threads/alarm-wait.c:92:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 17 bytes into a destination of size 16
+   92 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-simultaneous.c -o tests/threads/alarm-simultaneous.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-simultaneous.d
+[01m[K../../tests/threads/alarm-simultaneous.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-simultaneous.c:61:44:[m[K [01;35m[Kwarning: [m[K‘[01m[K%d[m[K’ directive output may be truncated writing between 1 and 10 bytes into a region of size 9 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   61 |       snprintf (name, sizeof name, "thread [01;35m[K%d[m[K", i);
+      |                                            [01;35m[K^~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:36:[m[K [01;36m[Knote: [m[Kdirective argument in the range [0, 2147483646]
+   61 |       snprintf (name, sizeof name, [01;36m[K"thread %d"[m[K, i);
+      |                                    [01;36m[K^~~~~~~~~~~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 18 bytes into a destination of size 16
+   61 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-priority.c -o tests/threads/alarm-priority.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-priority.d
+gcc -c ../../tests/threads/alarm-zero.c -o tests/threads/alarm-zero.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-zero.d
+gcc -c ../../tests/threads/alarm-negative.c -o tests/threads/alarm-negative.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-negative.d
+gcc -c ../../tests/threads/priority-change.c -o tests/threads/priority-change.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-change.d
+gcc -c ../../tests/threads/priority-donate-one.c -o tests/threads/priority-donate-one.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-one.d
+gcc -c ../../tests/threads/priority-donate-multiple.c -o tests/threads/priority-donate-multiple.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple.d
+gcc -c ../../tests/threads/priority-donate-multiple2.c -o tests/threads/priority-donate-multiple2.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple2.d
+gcc -c ../../tests/threads/priority-donate-nest.c -o tests/threads/priority-donate-nest.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-nest.d
+gcc -c ../../tests/threads/priority-donate-sema.c -o tests/threads/priority-donate-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-sema.d
+gcc -c ../../tests/threads/priority-donate-lower.c -o tests/threads/priority-donate-lower.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-lower.d
+gcc -c ../../tests/threads/priority-fifo.c -o tests/threads/priority-fifo.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-fifo.d
+gcc -c ../../tests/threads/priority-preempt.c -o tests/threads/priority-preempt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-preempt.d
+gcc -c ../../tests/threads/priority-sema.c -o tests/threads/priority-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-sema.d
+gcc -c ../../tests/threads/priority-condvar.c -o tests/threads/priority-condvar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-condvar.d
+gcc -c ../../tests/threads/priority-donate-chain.c -o tests/threads/priority-donate-chain.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-chain.d
+gcc -c ../../tests/threads/mlfqs-load-1.c -o tests/threads/mlfqs-load-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-1.d
+gcc -c ../../tests/threads/mlfqs-load-60.c -o tests/threads/mlfqs-load-60.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-60.d
+gcc -c ../../tests/threads/mlfqs-load-avg.c -o tests/threads/mlfqs-load-avg.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-avg.d
+gcc -c ../../tests/threads/mlfqs-recent-1.c -o tests/threads/mlfqs-recent-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-recent-1.d
+gcc -c ../../tests/threads/mlfqs-fair.c -o tests/threads/mlfqs-fair.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-fair.d
+gcc -c ../../tests/threads/mlfqs-block.c -o tests/threads/mlfqs-block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-block.d
+ld -melf_i386 -T threads/kernel.lds.s -o kernel.o threads/start.o threads/init.o threads/thread.o threads/switch.o threads/interrupt.o threads/intr-stubs.o threads/synch.o threads/palloc.o threads/malloc.o devices/pit.o devices/timer.o devices/kbd.o devices/vga.o devices/serial.o devices/block.o devices/partition.o devices/ide.o devices/input.o devices/intq.o devices/rtc.o devices/shutdown.o devices/speaker.o lib/debug.o lib/random.o lib/stdio.o lib/stdlib.o lib/string.o lib/arithmetic.o lib/ustar.o lib/kernel/debug.o lib/kernel/list.o lib/kernel/bitmap.o lib/kernel/hash.o lib/kernel/console.o tests/threads/tests.o tests/threads/alarm-wait.o tests/threads/alarm-simultaneous.o tests/threads/alarm-priority.o tests/threads/alarm-zero.o tests/threads/alarm-negative.o tests/threads/priority-change.o tests/threads/priority-donate-one.o tests/threads/priority-donate-multiple.o tests/threads/priority-donate-multiple2.o tests/threads/priority-donate-nest.o tests/threads/priority-donate-sema.o tests/threads/priority-donate-lower.o tests/threads/priority-fifo.o tests/threads/priority-preempt.o tests/threads/priority-sema.o tests/threads/priority-condvar.o tests/threads/priority-donate-chain.o tests/threads/mlfqs-load-1.o tests/threads/mlfqs-load-60.o tests/threads/mlfqs-load-avg.o tests/threads/mlfqs-recent-1.o tests/threads/mlfqs-fair.o tests/threads/mlfqs-block.o
+ld: warning: threads/intr-stubs.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+objdump -S kernel.o > kernel.asm
+nm -n kernel.o > kernel.sym
+objcopy -R .note -R .comment -S kernel.o kernel.bin
+gcc -c ../../threads/loader.S -o threads/loader.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib 
+ld -melf_i386 -N -e 0 -Ttext 0x7c00 -o loader.out threads/loader.o
+ld: warning: loader.out has a LOAD segment with RWX permissions
+objdump -S loader.out > loader.asm
+objcopy -S -O binary -j .text loader.out loader.bin
+rm loader.out
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+cd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+pintos -v -k -T 60 --qemu  -- -q  run alarm-single < /dev/null 2> tests/threads/alarm-single.errors > tests/threads/alarm-single.output
+perl -I../.. ../../tests/threads/alarm-single.ck tests/threads/alarm-single tests/threads/alarm-single.result
+[31mFAIL tests/threads/alarm-single
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run alarm-multiple < /dev/null 2> tests/threads/alarm-multiple.errors > tests/threads/alarm-multiple.output
+perl -I../.. ../../tests/threads/alarm-multiple.ck tests/threads/alarm-multiple tests/threads/alarm-multiple.result
+[31mFAIL tests/threads/alarm-multiple
+[0mRun spontaneously rebooted 33 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run alarm-simultaneous < /dev/null 2> tests/threads/alarm-simultaneous.errors > tests/threads/alarm-simultaneous.output
+perl -I../.. ../../tests/threads/alarm-simultaneous.ck tests/threads/alarm-simultaneous tests/threads/alarm-simultaneous.result
+[31mFAIL tests/threads/alarm-simultaneous
+[0mRun spontaneously rebooted 33 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run alarm-priority < /dev/null 2> tests/threads/alarm-priority.errors > tests/threads/alarm-priority.output
+perl -I../.. ../../tests/threads/alarm-priority.ck tests/threads/alarm-priority tests/threads/alarm-priority.result
+[31mFAIL tests/threads/alarm-priority
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run alarm-zero < /dev/null 2> tests/threads/alarm-zero.errors > tests/threads/alarm-zero.output
+perl -I../.. ../../tests/threads/alarm-zero.ck tests/threads/alarm-zero tests/threads/alarm-zero.result
+[31mFAIL tests/threads/alarm-zero
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run alarm-negative < /dev/null 2> tests/threads/alarm-negative.errors > tests/threads/alarm-negative.output
+perl -I../.. ../../tests/threads/alarm-negative.ck tests/threads/alarm-negative tests/threads/alarm-negative.result
+[31mFAIL tests/threads/alarm-negative
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-change < /dev/null 2> tests/threads/priority-change.errors > tests/threads/priority-change.output
+perl -I../.. ../../tests/threads/priority-change.ck tests/threads/priority-change tests/threads/priority-change.result
+[31mFAIL tests/threads/priority-change
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-one < /dev/null 2> tests/threads/priority-donate-one.errors > tests/threads/priority-donate-one.output
+perl -I../.. ../../tests/threads/priority-donate-one.ck tests/threads/priority-donate-one tests/threads/priority-donate-one.result
+[31mFAIL tests/threads/priority-donate-one
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-multiple < /dev/null 2> tests/threads/priority-donate-multiple.errors > tests/threads/priority-donate-multiple.output
+perl -I../.. ../../tests/threads/priority-donate-multiple.ck tests/threads/priority-donate-multiple tests/threads/priority-donate-multiple.result
+[31mFAIL tests/threads/priority-donate-multiple
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-multiple2 < /dev/null 2> tests/threads/priority-donate-multiple2.errors > tests/threads/priority-donate-multiple2.output
+gabri@alien:~/pintos-env/pintos/src/threads$ make clean
+make
+make check
+rm -rf build
+mkdir -p build/devices
+mkdir -p build/lib
+mkdir -p build/lib/kernel
+mkdir -p build/lib/user
+mkdir -p build/tests/threads
+mkdir -p build/threads
+cp ../Makefile.build build/Makefile
+cd build && make all
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+gcc -E -nostdinc -I../.. -I../../lib -I../../lib/kernel -P ../../threads/kernel.lds.S > threads/kernel.lds.s
+gcc -c ../../threads/start.S -o threads/start.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/start.d
+gcc -c ../../threads/init.c -o threads/init.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prd
+gcc -c ../../threads/thread.c -o threads/thread.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+gcc -c ../../threads/switch.S -o threads/switch.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/switch.d
+gcc -c ../../threads/interrupt.c -o threads/interrupt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -d
+gcc -c ../../threads/intr-stubs.S -o threads/intr-stubs.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/intr-stubs.d
+gcc -c ../../threads/synch.c -o threads/synch.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+gcc -c ../../threads/palloc.c -o threads/palloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+gcc -c ../../threads/malloc.c -o threads/malloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+gcc -c ../../devices/pit.c -o devices/pit.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+../../devices/timer.c:35:6: warning: no previous prototype for ‘less’ [-Wmissing-prototypes]
+   35 | bool less(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      ^~~~
+../../devices/timer.c: In function ‘less’:
+../../devices/timer.c:35:71: warning: unused parameter ‘aux’ [-Wunused-parameter]
+   35 | bool less(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |                                                                 ~~~~~~^~~
+../../devices/timer.c: In function ‘timer_sleep’:
+../../devices/timer.c:110:64: warning: passing argument 3 of ‘list_insert_ordered’ from incompatible pointer type [-Wincompatible-pointer-types]
+  110 |   list_insert_ordered(&listaThreadsDormindo,&threadAtual->elem,less,NULL);
+      |                                                                ^~~~
+      |                                                                |
+      |                                                                _Bool (*)(struct list_elem *, struct list_elem *, void *)
+In file included from ../../threads/synch.h:4,
+                 from ../../devices/timer.c:8:
+../../lib/kernel/list.h:173:27: note: expected ‘_Bool (*)(const struct list_elem *, const struct list_elem *, void *)’ but argument is of type ‘_Bool (*)(struct ’
+  173 |                           list_less_func *, void *aux);
+      |                           ^~~~~~~~~~~~~~~~
+gcc -c ../../devices/kbd.c -o devices/kbd.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+gcc -c ../../devices/vga.c -o devices/vga.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+gcc -c ../../devices/serial.c -o devices/serial.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I.perl -I../.. ../../tests/threads/priority-donate-multiple2.ck tests/threads/priority-donate-multiple2 tests/threads/priority-donate-multiple2.result
+[31mFAIL tests/threads/priority-donate-multiple2
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-nest < /dev/null 2> tests/threads/priority-donate-nest.errors > tests/threads/priority-donate-nest.output
+perl -I../.. ../../tests/threads/priority-donate-nest.ck tests/threads/priority-donate-nest tests/threads/priority-donate-nest.result
+[31mFAIL tests/threads/priority-donate-nest
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-sema < /dev/null 2> tests/threads/priority-donate-sema.errors > tests/threads/priority-donate-sema.output
+perl -I../.. ../../tests/threads/priority-donate-sema.ck tests/threads/priority-donate-sema tests/threads/priority-donate-sema.result
+[31mFAIL tests/threads/priority-donate-sema
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-lower < /dev/null 2> tests/threads/priority-donate-lower.errors > tests/threads/priority-donate-lower.output
+perl -I../.. ../../tests/threads/priority-donate-lower.ck tests/threads/priority-donate-lower tests/threads/priority-donate-lower.result
+[31mFAIL tests/threads/priority-donate-lower
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-fifo < /dev/null 2> tests/threads/priority-fifo.errors > tests/threads/priority-fifo.output
+perl -I../.. ../../tests/threads/priority-fifo.ck tests/threads/priority-fifo tests/threads/priority-fifo.result
+[31mFAIL tests/threads/priority-fifo
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-preempt < /dev/null 2> tests/threads/priority-preempt.errors > tests/threads/priority-preempt.output
+perl -I../.. ../../tests/threads/priority-preempt.ck tests/threads/priority-preempt tests/threads/priority-preempt.result
+[31mFAIL tests/threads/priority-preempt
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-sema < /dev/null 2> tests/threads/priority-sema.errors > tests/threads/priority-sema.output
+perl -I../.. ../../tests/threads/priority-sema.ck tests/threads/priority-sema tests/threads/priority-sema.result
+[31mFAIL tests/threads/priority-sema
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-condvar < /dev/null 2> tests/threads/priority-condvar.errors > tests/threads/priority-condvar.output
+perl -I../.. ../../tests/threads/priority-condvar.ck tests/threads/priority-condvar tests/threads/priority-condvar.result
+[31mFAIL tests/threads/priority-condvar
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 60 --qemu  -- -q  run priority-donate-chain < /dev/null 2> tests/threads/priority-donate-chain.errors > tests/threads/priority-donate-chain.output
+perl -I../.. ../../tests/threads/priority-donate-chain.ck tests/threads/priority-donate-chain tests/threads/priority-donate-chain.result
+[31mFAIL tests/threads/priority-donate-chain
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-load-1 < /dev/null 2> tests/threads/mlfqs-load-1.errors > tests/threads/mlfqs-load-1.output
+perl -I../.. ../../tests/threads/mlfqs-load-1.ck tests/threads/mlfqs-load-1 tests/threads/mlfqs-load-1.result
+[31mFAIL tests/threads/mlfqs-load-1
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-load-60 < /dev/null 2> tests/threads/mlfqs-load-60.errors > tests/threads/mlfqs-load-60.output
+perl -I../.. ../../tests/threads/mlfqs-load-60.ck tests/threads/mlfqs-load-60 tests/threads/mlfqs-load-60.result
+[31mFAIL tests/threads/mlfqs-load-60
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-load-avg < /dev/null 2> tests/threads/mlfqs-load-avg.errors > tests/threads/mlfqs-load-avg.output
+perl -I../.. ../../tests/threads/mlfqs-load-avg.ck tests/threads/mlfqs-load-avg tests/threads/mlfqs-load-avg.result
+[31mFAIL tests/threads/mlfqs-load-avg
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-recent-1 < /dev/null 2> tests/threads/mlfqs-recent-1.errors > tests/threads/mlfqs-recent-1.output
+perl -I../.. ../../tests/threads/mlfqs-recent-1.ck tests/threads/mlfqs-recent-1 tests/threads/mlfqs-recent-1.result
+[31mFAIL tests/threads/mlfqs-recent-1
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-fair-2 < /dev/null 2> tests/threads/mlfqs-fair-2.errors > tests/threads/mlfqs-fair-2.output
+perl -I../.. ../../tests/threads/mlfqs-fair-2.ck tests/threads/mlfqs-fair-2 tests/threads/mlfqs-fair-2.result
+[31mFAIL tests/threads/mlfqs-fair-2
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-fair-20 < /dev/null 2> tests/threads/mlfqs-fair-20.errors > tests/threads/mlfqs-fair-20.output
+perl -I../.. ../../tests/threads/mlfqs-fair-20.ck tests/threads/mlfqs-fair-20 tests/threads/mlfqs-fair-20.result
+[31mFAIL tests/threads/mlfqs-fair-20
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-nice-2 < /dev/null 2> tests/threads/mlfqs-nice-2.errors > tests/threads/mlfqs-nice-2.output
+perl -I../.. ../../tests/threads/mlfqs-nice-2.ck tests/threads/mlfqs-nice-2 tests/threads/mlfqs-nice-2.result
+[31mFAIL tests/threads/mlfqs-nice-2
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-nice-10 < /dev/null 2> tests/threads/mlfqs-nice-10.errors > tests/threads/mlfqs-nice-10.output
+perl -I../.. ../../tests/threads/mlfqs-nice-10.ck tests/threads/mlfqs-nice-10 tests/threads/mlfqs-nice-10.result
+[31mFAIL tests/threads/mlfqs-nice-10
+[0mRun spontaneously rebooted 32 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+pintos -v -k -T 480 --qemu  -- -q -mlfqs run mlfqs-block < /dev/null 2> tests/threads/mlfqs-block.errors > tests/threads/mlfqs-block.output
+perl -I../.. ../../tests/threads/mlfqs-block.ck tests/threads/mlfqs-block tests/threads/mlfqs-block.result
+[31mFAIL tests/threads/mlfqs-block
+[0mRun spontaneously rebooted 31 times.
+This is most often caused by unhandled page faults.
+Read the Triple Faults section in the Debugging chapter
+of the Pintos manual for more information.
+FAIL tests/threads/alarm-single
+FAIL tests/threads/alarm-multiple
+FAIL tests/threads/alarm-simultaneous
+FAIL tests/threads/alarm-priority
+FAIL tests/threads/alarm-zero
+FAIL tests/threads/alarm-negative
+FAIL tests/threads/priority-change
+FAIL tests/threads/priority-donate-one
+FAIL tests/threads/priority-donate-multiple
+FAIL tests/threads/priority-donate-multiple2
+FAIL tests/threads/priority-donate-nest
+FAIL tests/threads/priority-donate-sema
+FAIL tests/threads/priority-donate-lower
+FAIL tests/threads/priority-fifo
+FAIL tests/threads/priority-preempt
+FAIL tests/threads/priority-sema
+FAIL tests/threads/priority-condvar
+FAIL tests/threads/priority-donate-chain
+FAIL tests/threads/mlfqs-load-1
+FAIL tests/threads/mlfqs-load-60
+FAIL tests/threads/mlfqs-load-avg
+FAIL tests/threads/mlfqs-recent-1
+FAIL tests/threads/mlfqs-fair-2
+FAIL tests/threads/mlfqs-fair-20
+FAIL tests/threads/mlfqs-nice-2
+FAIL tests/threads/mlfqs-nice-10
+FAIL tests/threads/mlfqs-block
+27 of 27 tests failed.
+make[1]: *** [../../tests/Make.tests:27: check] Error 1
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+make: *** [../Makefile.kernel:10: check] Error 2
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ gabri@alien:~/pintos-env/pintos/src/threads$ make clean
+[?2004lbash: gabri@alien:~/pintos-env/pintos/src/threads$: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make
+[?2004lcd build && make all
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ make check
+[?2004lcd build && make check
+make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+FAIL tests/threads/alarm-single
+FAIL tests/threads/alarm-multiple
+FAIL tests/threads/alarm-simultaneous
+FAIL tests/threads/alarm-priority
+FAIL tests/threads/alarm-zero
+FAIL tests/threads/alarm-negative
+FAIL tests/threads/priority-change
+FAIL tests/threads/priority-donate-one
+FAIL tests/threads/priority-donate-multiple
+FAIL tests/threads/priority-donate-multiple2
+FAIL tests/threads/priority-donate-nest
+FAIL tests/threads/priority-donate-sema
+FAIL tests/threads/priority-donate-lower
+FAIL tests/threads/priority-fifo
+FAIL tests/threads/priority-preempt
+FAIL tests/threads/priority-sema
+FAIL tests/threads/priority-condvar
+FAIL tests/threads/priority-donate-chain
+FAIL tests/threads/mlfqs-load-1
+FAIL tests/threads/mlfqs-load-60
+FAIL tests/threads/mlfqs-load-avg
+FAIL tests/threads/mlfqs-recent-1
+FAIL tests/threads/mlfqs-fair-2
+FAIL tests/threads/mlfqs-fair-20
+FAIL tests/threads/mlfqs-nice-2
+FAIL tests/threads/mlfqs-nice-10
+FAIL tests/threads/mlfqs-block
+27 of 27 tests failed.
+make[1]: *** [../../tests/Make.tests:27: check] Error 1
+make[1]: Leaving directory '/home/gabri/pintos-env/pintos/src/threads/build'
+make: *** [../Makefile.kernel:10: check] Error 2
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ rm -rf build
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/devices
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/lib
+[?2004lg -msoft-float -O0 [?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/lib/kernel
+[?2004l-fno-stack-protector -nost[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/lib/user
+[?2004ldinc -I../.. -I../../lib[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/tests/threads
+[?2004l -I../../lib/kernel -Wall -W [?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ mkdir -p build/threads
+[?2004l-Wstrict-d
+gcc -c ../..[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ cp ../Makefile.build build/Makefile
+[?2004l/devices/partition.c -o devices/part[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads[00m$ cd build && make all
+[?2004lition.o -m32 -g -msofgcc -E -nostdinc -I../.. -I../../lib -I../../lib/kernel -P ../../threads/kernel.lds.S > threads/kernel.lds.s
+gcc -c ../../threads/start.S -o threads/start.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/start.d
+gcc -c ../../threads/init.c -o threads/init.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/init.d
+gcc -c ../../threads/thread.c -o threads/thread.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/thread.d
+gcc -c ../../threads/switch.S -o threads/switch.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/switch.d
+gcc -c ../../threads/interrupt.c -o threads/interrupt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/interrupt.d
+gcc -c ../../threads/intr-stubs.S -o threads/intr-stubs.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/intr-stubs.d
+gcc -c ../../threads/synch.c -o threads/synch.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/synch.d
+gcc -c ../../threads/palloc.c -o threads/palloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/palloc.d
+gcc -c ../../threads/malloc.c -o threads/malloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF threads/malloc.d
+gcc -c ../../devices/pit.c -o devices/pit.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/pit.d
+gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/timer.d
+[01m[K../../devices/timer.c:35:6:[m[K [01;35m[Kwarning: [m[Kno previous prototype for ‘[01m[Kless[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-prototypes-Wmissing-prototypes]8;;[m[K]
+   35 | bool [01;35m[Kless[m[K(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+      |      [01;35m[K^~~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Kless[m[K’:
+[01m[K../../devices/timer.c:35:71:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kaux[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   35 | bool less(struct list_elem *threadA, struct list_elem *threadB, [01;35m[Kvoid *aux[m[K){
+      |                                                                 [01;35m[K~~~~~~^~~[m[K
+[01m[K../../devices/timer.c:[m[K In function ‘[01m[Ktimer_sleep[m[K’:
+[01m[K../../devices/timer.c:110:64:[m[K [01;35m[Kwarning: [m[Kpassing argument 3 of ‘[01m[Klist_insert_ordered[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+  110 |   list_insert_ordered(&listaThreadsDormindo,&threadAtual->elem,[01;35m[Kless[m[K,NULL);
+      |                                                                [01;35m[K^~~~[m[K
+      |                                                                [01;35m[K|[m[K
+      |                                                                [01;35m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K
+In file included from [01m[K../../threads/synch.h:4[m[K,
+                 from [01m[K../../devices/timer.c:8[m[K:
+[01m[K../../lib/kernel/list.h:173:27:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[K_Bool (*)(const struct list_elem *, const struct list_elem *, void *)[m[K’ but argument is of type ‘[01m[K_Bool (*)(struct list_elem *, struct list_elem *, void *)[m[K’
+  173 |                           [01;36m[Klist_less_func *[m[K, void *aux);
+      |                           [01;36m[K^~~~~~~~~~~~~~~~[m[K
+gcc -c ../../devices/kbd.c -o devices/kbd.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/kbd.d
+gcc -c ../../devices/vga.c -o devices/vga.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/vga.d
+gcc -c ../../devices/serial.c -o devices/serial.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/serial.d
+gcc -c ../../devices/block.c -o devices/block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/block.d
+gcc -c ../../devices/partition.c -o devices/partition.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/partition.d
+gcc -c ../../devices/ide.c -o devices/ide.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/ide.d
+gcc -c ../../devices/input.c -o devices/input.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/input.d
+gcc -c ../../devices/intq.c -o devices/intq.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/intq.d
+gcc -c ../../devices/rtc.c -o devices/rtc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/rtc.d
+gcc -c ../../devices/shutdown.c -o devices/shutdown.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/shutdown.d
+gcc -c ../../devices/speaker.c -o devices/speaker.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF devices/speaker.d
+gcc -c ../../lib/debug.c -o lib/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/debug.d
+[01m[K../../lib/debug.c:[m[K In function ‘[01m[Kdebug_backtrace[m[K’:
+[01m[K../../lib/debug.c:19:16:[m[K [01;35m[Kwarning: [m[Kcalling ‘[01m[K__builtin_frame_address[m[K’ with a nonzero argument is unsafe [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wframe-address-Wframe-address]8;;[m[K]
+   19 |   for (frame = [01;35m[K__builtin_frame_address (1)[m[K;
+      |                [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../lib/random.c -o lib/random.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/random.d
+gcc -c ../../lib/stdio.c -o lib/stdio.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/stdio.d
+gcc -c ../../lib/stdlib.c -o lib/stdlib.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/stdlib.d
+gcc -c ../../lib/string.c -o lib/string.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/string.d
+In file included from [01m[K../../lib/string.c:2[m[K:
+[01m[K../../lib/string.c:[m[K In function ‘[01m[Kstrchr[m[K’:
+[01m[K../../lib/debug.h:32:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Knonnull[m[K’ argument ‘[01m[Kstring[m[K’ compared to NULL [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnonnull-compare-Wnonnull-compare]8;;[m[K]
+   32 |         if [01;35m[K([m[KCONDITION) { } else {                               \
+      |            [01;35m[K^[m[K
+[01m[K../../lib/string.c:117:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KASSERT[m[K’
+  117 |   [01;36m[KASSERT[m[K (string != NULL);
+      |   [01;36m[K^~~~~~[m[K
+[01m[K../../lib/string.c:[m[K In function ‘[01m[Kstrlen[m[K’:
+[01m[K../../lib/debug.h:32:12:[m[K [01;35m[Kwarning: [m[K‘[01m[Knonnull[m[K’ argument ‘[01m[Kstring[m[K’ compared to NULL [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnonnull-compare-Wnonnull-compare]8;;[m[K]
+   32 |         if [01;35m[K([m[KCONDITION) { } else {                               \
+      |            [01;35m[K^[m[K
+[01m[K../../lib/string.c:297:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KASSERT[m[K’
+  297 |   [01;36m[KASSERT[m[K (string != NULL);
+      |   [01;36m[K^~~~~~[m[K
+gcc -c ../../lib/arithmetic.c -o lib/arithmetic.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/arithmetic.d
+gcc -c ../../lib/ustar.c -o lib/ustar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/ustar.d
+gcc -c ../../lib/kernel/debug.c -o lib/kernel/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/debug.d
+[01m[K../../lib/kernel/debug.c:[m[K In function ‘[01m[Kprint_stacktrace[m[K’:
+[01m[K../../lib/kernel/debug.c:82:15:[m[K [01;35m[Kwarning: [m[Kcalling ‘[01m[K__builtin_frame_address[m[K’ with a nonzero argument is unsafe [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wframe-address-Wframe-address]8;;[m[K]
+   82 |       frame = [01;35m[K__builtin_frame_address (1)[m[K;
+      |               [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../lib/kernel/list.c -o lib/kernel/list.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/list.d
+gcc -c ../../lib/kernel/bitmap.c -o lib/kernel/bitmap.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/bitmap.d
+gcc -c ../../lib/kernel/hash.c -o lib/kernel/hash.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/hash.d
+gcc -c ../../lib/kernel/console.c -o lib/kernel/console.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF lib/kernel/console.d
+gcc -c ../../tests/threads/tests.c -o tests/threads/tests.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/tests.d
+gcc -c ../../tests/threads/alarm-wait.c -o tests/threads/alarm-wait.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-wait.d
+[01m[K../../tests/threads/alarm-wait.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-wait.c:92:46:[m[K [01;35m[Kwarning: [m[K‘[01m[Ksnprintf[m[K’ output may be truncated before the last format character [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   92 |       snprintf (name, sizeof name, "thread %d[01;35m[K"[m[K, i);
+      |                                              [01;35m[K^[m[K
+[01m[K../../tests/threads/alarm-wait.c:92:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 17 bytes into a destination of size 16
+   92 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-simultaneous.c -o tests/threads/alarm-simultaneous.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-simultaneous.d
+[01m[K../../tests/threads/alarm-simultaneous.c:[m[K In function ‘[01m[Ktest_sleep[m[K’:
+[01m[K../../tests/threads/alarm-simultaneous.c:61:44:[m[K [01;35m[Kwarning: [m[K‘[01m[K%d[m[K’ directive output may be truncated writing between 1 and 10 bytes into a region of size 9 [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-truncation=-Wformat-truncation=]8;;[m[K]
+   61 |       snprintf (name, sizeof name, "thread [01;35m[K%d[m[K", i);
+      |                                            [01;35m[K^~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:36:[m[K [01;36m[Knote: [m[Kdirective argument in the range [0, 2147483646]
+   61 |       snprintf (name, sizeof name, [01;36m[K"thread %d"[m[K, i);
+      |                                    [01;36m[K^~~~~~~~~~~[m[K
+[01m[K../../tests/threads/alarm-simultaneous.c:61:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksnprintf[m[K’ output between 9 and 18 bytes into a destination of size 16
+   61 |       [01;36m[Ksnprintf (name, sizeof name, "thread %d", i)[m[K;
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gcc -c ../../tests/threads/alarm-priority.c -o tests/threads/alarm-priority.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-priority.d
+gcc -c ../../tests/threads/alarm-zero.c -o tests/threads/alarm-zero.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-zero.d
+gcc -c ../../tests/threads/alarm-negative.c -o tests/threads/alarm-negative.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/alarm-negative.d
+gcc -c ../../tests/threads/priority-change.c -o tests/threads/priority-change.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-change.d
+gcc -c ../../tests/threads/priority-donate-one.c -o tests/threads/priority-donate-one.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-one.d
+gcc -c ../../tests/threads/priority-donate-multiple.c -o tests/threads/priority-donate-multiple.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple.d
+gcc -c ../../tests/threads/priority-donate-multiple2.c -o tests/threads/priority-donate-multiple2.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-multiple2.d
+gcc -c ../../tests/threads/priority-donate-nest.c -o tests/threads/priority-donate-nest.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-nest.d
+gcc -c ../../tests/threads/priority-donate-sema.c -o tests/threads/priority-donate-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-sema.d
+gcc -c ../../tests/threads/priority-donate-lower.c -o tests/threads/priority-donate-lower.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-lower.d
+gcc -c ../../tests/threads/priority-fifo.c -o tests/threads/priority-fifo.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-fifo.d
+gcc -c ../../tests/threads/priority-preempt.c -o tests/threads/priority-preempt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-preempt.d
+gcc -c ../../tests/threads/priority-sema.c -o tests/threads/priority-sema.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-sema.d
+gcc -c ../../tests/threads/priority-condvar.c -o tests/threads/priority-condvar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-condvar.d
+gcc -c ../../tests/threads/priority-donate-chain.c -o tests/threads/priority-donate-chain.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/priority-donate-chain.d
+gcc -c ../../tests/threads/mlfqs-load-1.c -o tests/threads/mlfqs-load-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-1.d
+gcc -c ../../tests/threads/mlfqs-load-60.c -o tests/threads/mlfqs-load-60.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-60.d
+gcc -c ../../tests/threads/mlfqs-load-avg.c -o tests/threads/mlfqs-load-avg.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-load-avg.d
+gcc -c ../../tests/threads/mlfqs-recent-1.c -o tests/threads/mlfqs-recent-1.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-recent-1.d
+gcc -c ../../tests/threads/mlfqs-fair.c -o tests/threads/mlfqs-fair.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-fair.d
+gcc -c ../../tests/threads/mlfqs-block.c -o tests/threads/mlfqs-block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypes -Wmissing-prototypes -Wsystem-headers  -MMD -MF tests/threads/mlfqs-block.d
+ld -melf_i386 -T threads/kernel.lds.s -o kernel.o threads/start.o threads/init.o threads/thread.o threads/switch.o threads/interrupt.o threads/intr-stubs.o threads/synch.o threads/palloc.o threads/malloc.o devices/pit.o devices/timer.o devices/kbd.o devices/vga.o devices/serial.o devices/block.o devices/partition.o devices/ide.o devices/input.o devices/intq.o devices/rtc.o devices/shutdown.o devices/speaker.o lib/debug.o lib/random.o lib/stdio.o lib/stdlib.o lib/string.o lib/arithmetic.o lib/ustar.o lib/kernel/debug.o lib/kernel/list.o lib/kernel/bitmap.o lib/kernel/hash.o lib/kernel/console.o tests/threads/tests.o tests/threads/alarm-wait.o tests/threads/alarm-simultaneous.o tests/threads/alarm-priority.o tests/threads/alarm-zero.o tests/threads/alarm-negative.o tests/threads/priority-change.o tests/threads/priority-donate-one.o tests/threads/priority-donate-multiple.o tests/threads/priority-donate-multiple2.o tests/threads/priority-donate-nest.o tests/threads/priority-donate-sema.o tests/threads/priority-donate-lower.o tests/threads/priority-fifo.o tests/threads/priority-preempt.o tests/threads/priority-sema.o tests/threads/priority-condvar.o tests/threads/priority-donate-chain.o tests/threads/mlfqs-load-1.o tests/threads/mlfqs-load-60.o tests/threads/mlfqs-load-avg.o tests/threads/mlfqs-recent-1.o tests/threads/mlfqs-fair.o tests/threads/mlfqs-block.o
+ld: warning: threads/intr-stubs.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+objdump -S kernel.o > kernel.asm
+nm -n kernel.o > kernel.sym
+objcopy -R .note -R .comment -S kernel.o kernel.bin
+gcc -c ../../threads/loader.S -o threads/loader.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib 
+ld -melf_i386 -N -e 0 -Ttext 0x7c00 -o loader.out threads/loader.o
+ld: warning: loader.out has a LOAD segment with RWX permissions
+objdump -S loader.out > loader.asm
+objcopy -S -O binary -j .text loader.out loader.bin
+rm loader.out
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ make[1]: Entering directory '/home/gabri/pintos-env/pintos/src/threads/build'
+[?2004lmake[1]:: command not found
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -E -nostdinc -I../.. -I../../lib -I../../lib/kernel -P ../../threads/kernel.lds.S > threads/kernel.lds.s
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/start.S -o threads/start.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/start.d
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/init.c -o threads/init.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prd[m[K’; did you mean ‘[01m[K-gstrict-dwarf[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/thread.c -o threads/thread.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstricd[m[K’; did you mean ‘[01m[K-Wrestrict[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/switch.S -o threads/switch.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/switch.d
+[?2004l[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/interrupt.c -o threads/interrupt.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -d
+[?2004levices/speaker.c -o devices/speaker.o [01m[Kgcc:[m[K [01;31m[Kerror: [m[Kmissing argument to ‘[01m[K-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/intr-stubs.S -o threads/intr-stubs.o -Wa,--gstabs,--32 -nostdinc -I../.. -I../../lib -I../../lib/kernel  -MMD -MF threads/intr-stubs.d
+[?2004l-m32 [?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/synch.c -o threads/synch.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+[?2004ltotypd
+../../lib/debug.c: In function ‘debug_backt[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/palloc.c -o threads/palloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstricd[m[K’; did you mean ‘[01m[K-Wrestrict[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../threads/malloc.c -o threads/malloc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstricd[m[K’; did you mean ‘[01m[K-Wrestrict[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/pit.c -o devices/pit.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-protd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/timer.c -o devices/timer.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../devices/timer.c:35:6: warning: no previous prototype for ‘less’ [-Wmissing-prototypes]
+[?2004lbash: ../../devices/timer.c:35:6:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    35 | bool less(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |      ^~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../devices/timer.c: In function ‘less’:
+[?2004lbash: ../../devices/timer.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../devices/timer.c:35:71: warning: unused parameter ‘aux’ [-Wunused-parameter]
+[?2004lbash: ../../devices/timer.c:35:71:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    35 | bool less(struct list_elem *threadA, struct list_elem *threadB, void *aux){
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                                                 ~~~~~~^~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../devices/timer.c: In function ‘timer_sleep’:
+[?2004lbash: ../../devices/timer.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../devices/timer.c:110:64: warning: passing argument 3 of ‘list_insert_ordered’ from incompatible pointer type [-Wincompatible-pointer-types]
+[?2004lbash: ../../devices/timer.c:110:64:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$   110 |   list_insert_ordered(&listaThreadsDormindo,&threadAtual->elem,less,NULL);
+[?2004lbash: syntax error near unexpected token `&'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                                                ^~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                                                |
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                                                _Bool (*)(struct list_elem *, struct list_elem *, void *)
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ In file included from ../../threads/synch.h:4,
+[?2004lIn: command not found
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$                  from ../../devices/timer.c:8:
+[?2004lCommand 'from' not found, but can be installed with:
+sudo apt install mailutils
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/kernel/list.h:173:27: note: expected ‘_Bool (*)(const struct list_elem *, const struct list_elem *, void *)’ but argument is of type ‘_Bool (*)(struct ’
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$   173 |                           list_less_func *, void *aux);
+[?2004lbash: syntax error near unexpected token `)'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                           ^~~~~~~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/kbd.c -o devices/kbd.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-protd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/vga.c -o devices/vga.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-protd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/serial.c -o devices/serial.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstricd[m[K’; did you mean ‘[01m[K-Wrestrict[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/block.c -o devices/block.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/partition.c -o devices/partition.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -d
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kmissing argument to ‘[01m[K-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/ide.c -o devices/ide.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-protd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/input.c -o devices/input.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-d
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/intq.c -o devices/intq.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prd[m[K’; did you mean ‘[01m[K-gstrict-dwarf[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/rtc.c -o devices/rtc.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-protd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-protd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/shutdown.c -o devices/shutdown.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wsd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wsd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../devices/speaker.c -o devices/speaker.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrd
+[?2004lnp[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/debug.c -o lib/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototypd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/debug.c: In function ‘debug_backtrace’:
+[?2004lbash: ../../lib/debug.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/debug.c:19:16: warning: calling ‘__builtin_frame_address’ with a nonzero argument is unsafe [-Wframe-address]
+[?2004lbash: ../../lib/debug.c:19:16:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    19 |   for (frame = __builtin_frame_address (1);
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/random.c -o lib/random.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/stdio.c -o lib/stdio.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototypd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/stdlib.c -o lib/stdlib.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/string.c -o lib/string.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ In file included from ../../lib/string.c:2:
+[?2004lIn: command not found
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/string.c: In function ‘strchr’:
+[?2004lbash: ../../lib/string.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/debug.h:32:12: warning: ‘nonnull’ argument ‘string’ compared to NULL [-Wnonnull-compare]
+[?2004lbash: ../../lib/debug.h:32:12:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    32 |         if (CONDITION) { } else {                               \
+[?2004lbash: syntax error near unexpected token `{'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |            ^
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/string.c:117:3: note: in expansion of macro ‘ASSERT’
+[?2004lbash: ../../lib/string.c:117:3:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$   117 |   ASSERT (string != NULL);
+[?2004lbash: syntax error near unexpected token `string'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |   ^~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/string.c: In function ‘strlen’:
+[?2004l -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I.bash: ../../lib/string.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/debug.h:32:12: warning: ‘nonnull’ argument ‘string’ compared to NULL [-Wnonnull-compare]
+[?2004lbash: ../../lib/debug.h:32:12:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    32 |         if (CONDITION) { } else {                               \
+[?2004lbash: syntax error near unexpected token `{'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |            ^
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/string.c:297:3: note: in expansion of macro ‘ASSERT’
+[?2004lbash: ../../lib/string.c:297:3:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$   297 |   ASSERT (string != NULL);
+[?2004lkbash: syntax error near unexpected token `string'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |   ^~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/arithmetic.c -o lib/arithmetic.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstricd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstricd[m[K’; did you mean ‘[01m[K-Wrestrict[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/ustar.c -o lib/ustar.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrict-prototypd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrict-prototypd[m[K’; did you mean ‘[01m[K-Wstrict-prototypes[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/kernel/debug.c -o lib/kernel/debug.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wsd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wsd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/kernel/debug.c: In function ‘print_stacktrace’:
+[?2004lbash: ../../lib/kernel/debug.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../lib/kernel/debug.c:82:15: warning: calling ‘__builtin_frame_address’ with a nonzero argument is unsafe [-Wframe-address]
+[?2004lbash: ../../lib/kernel/debug.c:82:15:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    82 |       frame = __builtin_frame_address (1);
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/kernel/list.c -o lib/kernel/list.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/kernel/bitmap.c -o lib/kernel/bitmap.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -d
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kmissing argument to ‘[01m[K-d[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/kernel/hash.c -o lib/kernel/hash.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -W -Wstrd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wstrd[m[K’
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../lib/kernel/console.c -o lib/kernel/console.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall -Wd
+[?2004l[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kunrecognized command-line option ‘[01m[K-Wd[m[K’; did you mean ‘[01m[K-Hd[m[K’?
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/tests.c -o tests/threads/tests.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kernel -Wall d
+[?2004l[01m[Kgcc:[m[K [01;35m[Kwarning: [m[Kd: linker input file unused because linking not done
+[01m[Kgcc:[m[K [01;31m[Kerror: [m[Kd: linker input file not found: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/alarm-wait.c -o tests/threads/alarm-wait.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kerd
+[?2004lIn file included from [01m[K../../tests/threads/alarm-wait.c:5[m[K:
+[01m[K../../lib/stdio.h:12:24:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include_next <stdio.h>
+      |                        [01;31m[K^[m[K
+In file included from [01m[K../../tests/threads/alarm-wait.c:9[m[K:
+[01m[K../../threads/synch.h:4:10:[m[K [01;31m[Kfatal error: [m[Klist.h: No such file or directory
+    4 | #include [01;31m[K<list.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-wait.c: In function ‘test_sleep’:
+[?2004lbash: ../../tests/threads/alarm-wait.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-wait.c:92:46: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+[?2004lbash: ../../tests/threads/alarm-wait.c:92:46:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    92 |       snprintf (name, sizeof name, "thread %d", i);
+[?2004lbash: syntax error near unexpected token `name,'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                              ^
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-wait.c:92:7: note: ‘snprintf’ output between 9 and 17 bytes into a destination of size 16
+[?2004lbash: ../../tests/threads/alarm-wait.c:92:7:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    92 |       snprintf (name, sizeof name, "thread %d", i);
+[?2004lbash: syntax error near unexpected token `name,'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/alarm-simultaneous.c -o tests/threads/alarm-simultaneous.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../libd
+[?2004l[01m[K../../tests/threads/alarm-simultaneous.c:5:10:[m[K [01;31m[Kfatal error: [m[Kstdio.h: No such file or directory
+    5 | #include [01;31m[K<stdio.h>[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-simultaneous.c: In function ‘test_sleep’:
+[?2004lbash: ../../tests/threads/alarm-simultaneous.c:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-simultaneous.c:61:44: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size 9 [-Wformat-]
+[?2004lbash: ../../tests/threads/alarm-simultaneous.c:61:44:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    61 |       snprintf (name, sizeof name, "thread %d", i);
+[?2004lbash: syntax error near unexpected token `name,'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                            ^~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-simultaneous.c:61:36: note: directive argument in the range [0, 2147483646]
+[?2004lbash: ../../tests/threads/alarm-simultaneous.c:61:36:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    61 |       snprintf (name, sizeof name, "thread %d", i);
+[?2004lbash: syntax error near unexpected token `name,'
+ved in a future version of the linker
+objdump -S kernel.o > [?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |                                    ^~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ ../../tests/threads/alarm-simultaneous.c:61:7: note: ‘snprintf’ output between 9 and 18 bytes into a destination of size 16
+[?2004lbash: ../../tests/threads/alarm-simultaneous.c:61:7:: No such file or directory
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$    61 |       snprintf (name, sizeof name, "thread %d", i);
+[?2004lbash: syntax error near unexpected token `name,'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[?2004lbash: syntax error near unexpected token `|'
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/alarm-priority.c -o tests/threads/alarm-priority.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../..d
+[?2004lIn file included from [01m[K../../tests/threads/alarm-priority.c:4[m[K:
+[01m[K../../lib/stdio.h:12:24:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include_next <stdio.h>
+      |                        [01;31m[K^[m[K
+In file included from [01m[K../../tests/threads/alarm-priority.c:8[m[K:
+[01m[K../../threads/synch.h:4:10:[m[K [01;31m[Kfatal error: [m[Klist.h: No such file or directory
+    4 | #include [01;31m[K<list.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/alarm-zero.c -o tests/threads/alarm-zero.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../../lib/kerd
+[?2004lIn file included from [01m[K../../tests/threads/alarm-zero.c:3[m[K:
+[01m[K../../lib/stdio.h:12:24:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include_next <stdio.h>
+      |                        [01;31m[K^[m[K
+In file included from [01m[K../../tests/threads/alarm-zero.c:6[m[K:
+[01m[K../../threads/synch.h:4:10:[m[K [01;31m[Kfatal error: [m[Klist.h: No such file or directory
+    4 | #include [01;31m[K<list.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/alarm-negative.c -o tests/threads/alarm-negative.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../..d
+[?2004lIn file included from [01m[K../../tests/threads/alarm-negative.c:3[m[K:
+[01m[K../../lib/stdio.h:12:24:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include_next <stdio.h>
+      |                        [01;31m[K^[m[K
+In file included from [01m[K../../tests/threads/alarm-negative.c:6[m[K:
+[01m[K../../threads/synch.h:4:10:[m[K [01;31m[Kfatal error: [m[Klist.h: No such file or directory
+    4 | #include [01;31m[K<list.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/priority-change.c -o tests/threads/priority-change.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../lib -I../d
+[?2004lIn file included from [01m[K../../tests/threads/priority-change.c:5[m[K:
+[01m[K../../lib/stdio.h:12:24:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include_next <stdio.h>
+      |                        [01;31m[K^[m[K
+In file included from [01m[K../../tests/threads/priority-change.c:8[m[K:
+[01m[K../../threads/thread.h:5:10:[m[K [01;31m[Kfatal error: [m[Klist.h: No such file or directory
+    5 | #include [01;31m[K<list.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/priority-donate-one.c -o tests/threads/priority-donate-one.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../.. -I../../ld
+[?2004l[01m[K../../tests/threads/priority-donate-one.c:12:10:[m[K [01;31m[Kfatal error: [m[Kstdio.h: No such file or directory
+   12 | #include [01;31m[K<stdio.h>[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/priority-donate-multiple.c -o tests/threads/priority-donate-multiple.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../..d
+[?2004l[01m[K../../tests/threads/priority-donate-multiple.c:12:19:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   12 | #include <stdio.h>
+      |                   [01;31m[K^[m[K
+[01m[K../../tests/threads/priority-donate-multiple.c:13:10:[m[K [01;31m[Kfatal error: [m[Ktests/threads/tests.h: No such file or directory
+   13 | #include [01;31m[K"tests/threads/tests.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+[?2004h]0;gabri@alien: ~/pintos-env/pintos/src/threads/build[01;32mgabri@alien[00m:[01;34m~/pintos-env/pintos/src/threads/build[00m$ gcc -c ../../tests/threads/priority-donate-multiple2.c -o tests/threads/priority-donate-multiple2.o -m32 -g -msoft-float -O0 -fno-stack-protector -nostdinc -I../d
+[?2004l[01m[K../../tests/threads/priority-donate-multiple2.c:17:19:[m[K [01;31m[Kerror: [m[Kno include path in which to search for stdio.h
+   17 | #include <stdio.h>
+      |                   [01;31m[K^[m[K
+[01m[K../../tests/threads/priority-donate-multiple2.c:18:10:[m[K [01;31m[Kfatal error: [m[Ktests/threads/tests.h: No such file or directory
+   18 | #include [01;31m[K"tests/threads/tests.h"[m[K
+      |          

@@ -1,11 +1,22 @@
-# Pintos
-Labs for undergraduate OS class (600.318) at Johns Hopkins. [Pintos](http://pintos-os.org) 
-is a teaching operating system for x86, challenging but not overwhelming, small
-but realistic enough to understand OS in depth (it can run x86 machine and simulators 
-including QEMU, Bochs and VMWare Player!). The main source code, documentation and assignments 
-are developed by Ben Pfaff and others from Stanford (refer to its [LICENSE](src/LICENSE)).
+# Pint-OS — Alarm Clock
 
-The course instructor ([Ryan Huang](mailto:huang@cs.jhu.edu)) made some changes to the original
-Pintos labs to tailor for his class. The upstream for this branch comes from 
-[https://github.com/ryanphuang/PintosM](https://github.com/ryanphuang/PintosM). For students in the class, please
-download the release version for this branch at https://github.com/jhu-cs318/pintos.git
+Implementação da atividade **Alarm Clock** do Pint-OS.
+
+## Objetivo
+
+Corrigir o problema de **busy wait** existente na função `timer_sleep()`, evitando que a thread fique executando enquanto aguarda a passagem do tempo.
+
+## Implementação
+
+A solução foi desenvolvida **a partir da estrutura já existente do Pint-OS**, realizando alterações no código de threads e temporizador para:
+
+* Suspender a thread durante o período de espera;
+* Controlar as threads que estão dormindo;
+* Liberar a thread após o número de ticks solicitado;
+* Eliminar o uso de **busy wait**.
+
+## Escopo
+
+Foi implementada **somente a primeira problemática da atividade: Alarm Clock / remoção do busy wait**.
+
+A implementação mantém a estrutura original do Pint-OS, modificando apenas os componentes necessários para solucionar o problema.
